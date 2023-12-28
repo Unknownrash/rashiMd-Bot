@@ -53,7 +53,7 @@ command(
 
 command(
   {
-    pattern: "setpp ",
+    pattern: "pp ",
     fromMe: true,
     desc: "Set profile picture",
     type: "user",
@@ -69,7 +69,7 @@ command(
 
 command(
   {
-    pattern: "setname",
+    pattern: "stn",
     fromMe: true,
     desc: "Set User name",
     type: "user",
@@ -156,7 +156,7 @@ command(
   },
   async (message, match) => {
     await message.sendMessage(message.jid, "Restarting...");
-    exec("pm2 restart x-asena", (error, stdout, stderr) => {
+    exec("pm2 restart Rashi-bot", (error, stdout, stderr) => {
       if (error) {
         return message.sendMessage(message.jid, `Error: ${error}`);
       }
