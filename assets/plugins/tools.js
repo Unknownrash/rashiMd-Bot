@@ -14,7 +14,7 @@ command(
   {
     pattern: "vv",
     fromMe: isPrivate,
-    desc: "Forwards The View once messsage",
+    desc: "Forward කරන්න එක පාරක් බලන්න😁",
     type: "tool",
   },
   async (message, match, m) => {
