@@ -5,7 +5,7 @@ command(
   {
     pattern: "add ?(.*)",
     fromMe: true,
-    desc: "add a person to group",
+    desc: "ඇඩ් කරන්න කෙනෙක්ව👤+",
     type: "group",
   },
   async (message, match) => {
@@ -37,14 +37,14 @@ command(
   },
   async (message, match) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply("_මෙක වැඩ කරන්නෙ group වල🎉🥶_");
 
     match = match || message.reply_message.jid;
-    if (!match) return await message.reply("_Mention user to kick_");
+    if (!match) return await message.reply("_Mention කරන්න අයින් කරන්න ඔනි කෙනා😊🎉_");
 
     const isadmin = await isAdmin(message.jid, message.user, message.client);
 
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply("_ඔයා ඇඩ්මින් කෙනෙක් නෙමේ.🎀😽_");
     const jid = parsedJid(match);
 
     await message.client.groupParticipantsUpdate(message.jid, jid, "remove");
@@ -58,19 +58,19 @@ command(
   {
     pattern: "promote ?(.*)",
     fromMe: true,
-    desc: "promote to admin",
+    desc: "ඇඩ්මින් දෙන්න කෙනෙක්ට👤+",
     type: "group",
   },
   async (message, match) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply("_මෙක වැඩ කරන්නෙ group වල🎉🥶_");
 
     match = match || message.reply_message.jid;
-    if (!match) return await message.reply("_Mention user to promote_");
+    if (!match) return await message.reply("_Mention කරන්න ඇඩ්මින් දෙන්න ඔනි කෙනා🎀😽_");
 
     const isadmin = await isAdmin(message.jid, message.user, message.client);
 
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply("_ඔයා ඇඩ්මින් කෙනෙක් නෙමේ🎀🥲_");
     const jid = parsedJid(match);
 
     await message.client.groupParticipantsUpdate(message.jid, jid, "promote");
@@ -84,19 +84,19 @@ command(
   {
     pattern: "demote ?(.*)",
     fromMe: true,
-    desc: "demote from admin",
+    desc: "ඇඩ්මින් අයින් කරන්න👤¿",
     type: "group",
   },
   async (message, match) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply("_මෙක වැඩ කරන්නෙ group වල🎉🥶_");
 
     match = match || message.reply_message.jid;
-    if (!match) return await message.reply("_Mention user to demote_");
+    if (!match) return await message.reply("_Mention කරන්න ඇඩ්මින් අයින් කරන්න ඔනි කෙනාව😊_");
 
     const isadmin = await isAdmin(message.jid, message.user, message.client);
 
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply("_ඔයා ඇඩ්මින් කෙනෙක් නෙමෙ🎀🥶_");
     const jid = parsedJid(match);
 
     await message.client.groupParticipantsUpdate(message.jid, jid, "demote");
@@ -114,14 +114,14 @@ command(
   {
     pattern: "mute",
     fromMe: true,
-    desc: "nute group",
+    desc: "ගෘප් එක වහන්න😊👤",
     type: "group",
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply("_මෙක වැඩ කරන්නෙ group වල🎉🥶_");
     if (!isAdmin(message.jid, message.user, message.client))
-      return await message.reply("_I'm not admin_");
+      return await message.reply("_ඔයා ඇඩ්මින් කෙනෙක් නෙමෙ🥲🎉_");
     await message.reply("_Muting_");
     return await client.groupSettingUpdate(message.jid, "announcement");
   }
@@ -131,14 +131,14 @@ command(
   {
     pattern: "unmute",
     fromMe: true,
-    desc: "unmute group",
+    desc: "ගෘප් එක අරින්න😽◎",
     type: "group",
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply("_මෙක වැඩ කරන්නෙ group වල🎉🥶_");
     if (!isAdmin(message.jid, message.user, message.client))
-      return await message.reply("_I'm not admin_");
+      return await message.reply("ඔයා ඇඩ්මින් කෙනෙක් නේමේ🥲");
     await message.reply("_Unmuting_");
     return await client.groupSettingUpdate(message.jid, "not_announcement");
   }
@@ -146,14 +146,14 @@ command(
 
 command(
   {
-    pattern: "gjid",
+    pattern: "rash",
     fromMe: isPrivate,
-    desc: "gets jid of all group members",
+    desc: "ටැග්",
     type: "group",
   },
   async (message, match, m, client) => {
     if (!message.isGroup)
-      return await message.reply("_This command is for groups_");
+      return await message.reply("_මෙක වැඩ කරන්නෙ group වල🎉🥶_");
     let { participants } = await client.groupMetadata(message.jid);
     let participant = participants.map((u) => u.id);
     let str = "╭──〔 *Group Jids* 〕\n";
@@ -169,7 +169,7 @@ command(
   {
     pattern: "tagall ?(.*)",
     fromMe: true,
-    desc: "mention all users in group",
+    desc: "ඔක්කොම මෙන්ශන් කරන්න",
     type: "group",
   },
   async (message, match) => {
@@ -189,12 +189,12 @@ command(
   {
     pattern: "tag",
     fromMe: true,
-    desc: "mention all users in group",
+    desc: "ඔක්කොලම මෙන්ශන් කරන්න🥲",
     type: "group",
   },
   async (message, match) => {
     match = match || message.reply_message.text;
-    if (!match) return message.reply("_Enter or reply to a text to tag_");
+    if (!match) return message.reply("_ඔනි මෑසෙජ් එක දෙන්න_");
     if (!message.isGroup) return;
     const { participants } = await message.client.groupMetadata(message.jid);
     message.sendMessage(message.jid,match, {
