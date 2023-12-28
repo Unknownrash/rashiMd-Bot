@@ -5,13 +5,13 @@ command(
   {
     pattern: "kickall",
     fromMe: isPrivate,
-    desc: "Adds a person to group",
+    desc: "ඔක්කොම අයින් කරන්න🤥",
     type: "group",
   },
   async (message, match) => {
     let { participants } = await message.client.groupMetadata(message.jid);
     let isadmin = await isAdmin(message.jid, message.user, message.client);
-    if (!isadmin) return await message.reply("_I'm not admin_");
+    if (!isadmin) return await message.reply("_මම ඇඩ්මින් කෙනෙක් නෙමෙ🤐_");
 
     for (let key of participants) {
       let jid = parsedJid(key.id);
