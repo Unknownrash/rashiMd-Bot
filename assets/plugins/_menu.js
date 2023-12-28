@@ -1,6 +1,6 @@
 const plugins = require("../../lib/plugins");
 const { command, isPrivate, clockString, pm2Uptime } = require("../../lib");
-const { OWNER_NAME, BOT_NAME } = require("../../config");
+const { GAMING_RASH, RASHI_BOT } = require("../../config");
 const { hostname } = require("os");
 
 command(
@@ -29,14 +29,14 @@ Description: ${i.desc}\`\`\``);
       let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-      let menu = `╭━━━━━ᆫ ${BOT_NAME} ᄀ━━━
-┃ ⎆  *OWNER*:  ${OWNER_NAME}
-┃ ⎆  *PREFIX*: ${prefix}
-┃ ⎆  *HOST NAME*: ${hostname().split("-")[0]}
-┃ ⎆  *DATE*: ${date}
-┃ ⎆  *TIME*: ${time}
-┃ ⎆  *COMMANDS*: ${plugins.commands.length} 
-┃ ⎆  *UPTIME*: ${clockString(process.uptime())} 
+      let menu = `╭━━━━━ᆫ ${RASHI_BOT} ᄀ━━━
+┃ 🎀  *OWNER*:  ${RASHI_BOT}
+┃ 🎀  *PREFIX*: ${prefix}
+┃ 🎀  *HOST NAME*: ${hostname().split("-")[0]}
+┃ 🎀  *DATE*: ${date}
+┃ 🎀  *TIME*: ${time}
+┃ 🎀  *COMMANDS*: ${plugins.commands.length} 
+┃ 🎀  *UPTIME*: ${clockString(process.uptime())} 
 ╰━━━━━━━━━━━━━━━\n`;
       let cmnd = [];
       let cmd;
